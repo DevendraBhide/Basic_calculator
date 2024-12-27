@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="firstin"><input id="first" ></div><br>
+        <div class="secin">
+            <input  type="button"    onclick="ac()" class="sec"   value="AC">
+            <input  type="button"    onclick="demo('0')" class="sec"  value="0">
+            <input  type="button"    onclick="demo( '%')" class="sec"   value="%">
+            <input  type="button"  onclick="demo('/')" class="op_btn"   value="/">
+        </div><br>
+        <div class="thirdin">
+            <input  type="button"    onclick="demo('9')" class="number"   value="9">
+            <input  type="button"   onclick="demo('8')" class="number"   value="8">
+            <input  type="button"    onclick="demo('7')" class="number"   value="7">
+            <input  type="button"  onclick="demo('*')"  class="op_btn"  value="*">
+        </div><br>
+        <div class="fourin">
+            <input  type="button" onclick="demo('6')" class="number"   value="6">
+            <input  type="button" onclick="demo('5')" class="number"   value="5">
+            <input  type="button" onclick="demo('4')" class="number"   value="4">
+            <input  type="button" onclick="demo('-')" class="op_btn"   value="-">
+        </div><br>
+        <div class="fivein">
+            <input  type="button"   onclick="demo('3')" class="number"   value="3">
+            <input  type="button"   onclick="demo('2')" class="number"   value="2">
+            <input  type="button"   onclick="demo('1')" class="number"   value="1">
+            <input  type="button"   onclick="demo('+')" class="op_btn"   value="+">
+        </div><br>
+        <div class="sixin">
+            <input  type="button"   onclick="demo('(')"  class="number"   value="(">
+            <input  type="button"   onclick="demo(')')"  class="number"   value=")">         
+            <input  type="button"   onclick="demo('.')" class="number"  value=".">
+            <input  type="button" onclick="equal()" class="op_btn"   value="=">
+        </div>
+        <hr style="width: 90px; margin-top: 10px;">
+    </div>
+
+
+    <Script>
+        const ac=()=>{
+     const AC=document.getElementById('first')
+     AC.value=null;
+}
+
+function demo(val){
+   var value= document.getElementById('first').value+=val ;
+
+}
+ 
+const equal=()=>{
+try{
+
+    document.getElementById('first').value=eval( document.getElementById('first').value)
+}
+ catch(error){
+    document.getElementById('first').value="error";
+ }
+}
+    </Script>
+</body>
+
+</html>
